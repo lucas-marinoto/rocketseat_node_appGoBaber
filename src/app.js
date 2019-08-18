@@ -1,9 +1,9 @@
-//este tipo de importacao funciona apenas pois foi adicionado o modulo sucrase
+// este tipo de importacao funciona apenas pois foi adicionado o modulo sucrase
 // senao teria que ser assim:
-//const express = require("express");
+// const express = require("express");
 
-import express from "express";
-import routes from "./routes";
+import express from 'express';
+import routes from './routes';
 
 class App {
   constructor() {
@@ -21,7 +21,7 @@ class App {
   }
 }
 
-//este tipo de exportação funciona apenas pois foi adicionado o modulo sucrase
+// este tipo de exportação funciona apenas pois foi adicionado o modulo sucrase
 // senao teria que ser assim:
-//module.exports = new App().server;
+// module.exports = new App().server;
 export default new App().server;
