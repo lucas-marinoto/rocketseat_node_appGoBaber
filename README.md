@@ -80,9 +80,9 @@ module.exports = {
 };
 ```
 5- Criar a primeira migration de usuários, onde name é o nome da migration:
-`yarn sequelize migration:create --name=create-users`
+- `yarn sequelize migration:create --name=create-users`
 
--Exemplo de migration de Users:
+- Exemplo de migration de Users:
 ```javascript
 module.exports = {
   up: (queryInterface, Sequelize) => {
@@ -129,10 +129,11 @@ module.exports = {
 ```
 
 6 - Após criar a migration de usuários, usar o comando abaixo para criar de fato no banco a tabela:
-`yarn sequelize db:migrate`: cria a migration
-`yarn sequelize db:migrate:undo:all`: desfaz todas as migrations criadas localmente
-`yarn sequelize db:migrate:undo:all`: desfaz a última migration criada localmente
+- `yarn sequelize db:migrate`: cria a migration
+- `yarn sequelize db:migrate:undo:all`: desfaz todas as migrations criadas localmente
+- `yarn sequelize db:migrate:undo:all`: desfaz a última migration criada localmente
 
+------------------------------
 - `npx sequelize init`: Criação da estrutura do Sequelize na estrutura do projeto;
 
 4 - Pegar a pasta **Config** que ele criou e arrastar para dentro da pasta **Src**;
