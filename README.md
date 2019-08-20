@@ -131,7 +131,7 @@ module.exports = {
 6 - Após criar a migration de usuários, usar o comando abaixo para criar de fato no banco a tabela:
 - `yarn sequelize db:migrate`: cria a migration
 - `yarn sequelize db:migrate:undo:all`: desfaz todas as migrations criadas localmente
-- `yarn sequelize db:migrate:undo:all`: desfaz a última migration criada localmente
+- `yarn sequelize db:migrate:undo`: desfaz a última migration criada localmente
 
 ------------------------------
 - `npx sequelize init`: Criação da estrutura do Sequelize na estrutura do projeto;
