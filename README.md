@@ -54,10 +54,10 @@ Para executar agora o projeto:
 const {resolve} = require('path');
 //caminho dos arquivos de configuracoes do sequelize de acordo com as pastas acima
 module.exports = {
-  config: resolve(__dirname,'src','config','database.js'),
-  'models_path': resolve(__dirname,'src','app','models'),
-  'migrations_path': resolve(__dirname,'src','database','migrations'),
-  'seeders_path': resolve(__dirname,'src','database','seeds'),
+  config: resolve(__dirname, 'src', 'config', 'database.js'),
+  'models-path': resolve(__dirname, 'src', 'app', 'models'),
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds'),
 };
 ```
 3 - adicionar as dependências abaixo para o Postgres
@@ -79,6 +79,59 @@ module.exports = {
   },
 };
 ```
+5- Criar a primeira migration de usuários, onde name é o nome da migration:
+`yarn sequelize migration:create --name=create-users`
+
+-Exemplo de migration de Users:
+```javascript
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('users', {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true,
+      },
+      password_hash: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      provider: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false,
+      },
+      created_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updated_at: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+    });
+  },
+
+  down: queryInterface => {
+    return queryInterface.dropTable('users');
+  },
+};
+```
+
+6 - Após criar a migration de usuários, usar o comando abaixo para criar de fato no banco a tabela:
+`yarn sequelize db:migrate`: cria a migration
+`yarn sequelize db:migrate:undo:all`: desfaz todas as migrations criadas localmente
+`yarn sequelize db:migrate:undo:all`: desfaz a última migration criada localmente
 
 - `npx sequelize init`: Criação da estrutura do Sequelize na estrutura do projeto;
 
@@ -92,26 +145,7 @@ module.exports = {
 
 
 
-6- Testar se esta funcionando o código acima criando uma migration com o seguinte código: `npx sequelize migration:create --name=create-users` .
 Deverá ser criado uma migration no caminho: **src/database/migrations**;
-
-7- Fazer uma alteração no arquivo **src/config/database.js**
-
-```javascript
-module.exports = {
-  dialect: "postgress",
-  host: "127.0.0,1",
-  username: "docker",
-  password: "docker",
-  database: "gonodemodulo2",
-  operatorAliases: false,
-  define: {
-    timestamps: true,
-    underscored: true,
-    underscoredAll: true
-  }
-};
-```
 
 7- Rodar o comando : `yarn add pf`. Este é para usar o dialeto Postgress;
 
