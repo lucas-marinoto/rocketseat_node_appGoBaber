@@ -1,12 +1,12 @@
 # goBarber
 
-**Módulo Sucrase**
+**Extensão Sucrase**
 Utilizado o Sucrase para usar a Importacao e Exportacao dos modulos no node com as
 versões mais atuais do Java Script
 
 - `yarn sucrase-node src/server.js`: Rodar app com o sucrase;
 
-**Módulo Nodemon**
+**Extensão Nodemon**
 Utilizado o Nodemon para não precisar ficar parando e rodando o script novamente em caso
 de alteração no código
 É necessário incluir uma linha de código no package.json informando qual o script ira rodar
@@ -35,7 +35,7 @@ Para executar agora o projeto:
 
 ## Comandos Sequelize
 
-**Instação Sequelize - Comandos.**
+**Instalação Sequelize - Comandos.**
 
 - `yarn add sequelize`: Adicionar Dependência do Sequelize;
 - `yarn add sequelize-cli -D`: Adicionar linha de comando do Sequelize;
@@ -135,7 +135,21 @@ module.exports = {
 
 ------------------------------
 
-**Módulo BCriptyjs**
+**Extensão BCriptyjs**
 Utilizado para gerar o hash da senha. No exemplo será usado no Model de Usuário a dependência
 
 - `yarn add bcryptjs`
+
+------------------------------
+
+**Extensão JWT**
+Utilizado para gerar o tken JWT nas sessões
+
+- `yarn add jsonwebtoken`
+
+------------------------------
+
+**Extensão YUP**
+Utilizado para fazer validações de campo. Ex.: Se um email esta preenchido, se a senha tem 6 digitos, etc...
+
+- `yarn add yup`

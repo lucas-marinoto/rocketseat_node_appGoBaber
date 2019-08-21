@@ -24,6 +24,11 @@ class User extends Model {
     });
     return this;
   }
+
+  // validação de senha digitada com a senha salva no banco
+  checkPassword(password) {
+    return bcrypt.compare(password, this.password_hash);
+  }
 }
 
 export default User;
