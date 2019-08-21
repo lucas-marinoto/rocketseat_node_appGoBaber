@@ -134,34 +134,8 @@ module.exports = {
 - `yarn sequelize db:migrate:undo`: desfaz a última migration criada localmente
 
 ------------------------------
-- `npx sequelize init`: Criação da estrutura do Sequelize na estrutura do projeto;
 
-4 - Pegar a pasta **Config** que ele criou e arrastar para dentro da pasta **Src**;
+**Módulo BCriptyjs**
+Utilizado para gerar o hash da senha. No exemplo será usado no Model de Usuário a dependência
 
-2- Dentro da pasta **Src** criar uma pasta chamada **Database** e arrastar as pastas **Migrations** e **Seeders**;
-
-3- Arrastar a pasta **Models** para dentro da pasta **Src/App**;
-
-4- Alterar o nome do arquivo **src/config/config.json** para **src/config/database.js**;
-
-
-
-Deverá ser criado uma migration no caminho: **src/database/migrations**;
-
-7- Rodar o comando : `yarn add pf`. Este é para usar o dialeto Postgress;
-
-8- Abrir o arquivo **src/app/models/index.js** e alterar a linha 7 para o sequinte código:
-
-```javascript
-const config = require("../../config/database");
-```
-
-9- Alterar da linha 10 até a 15 para o sequinte código:
-
-```javascript
-const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    config,
-```
+- `yarn add bcryptjs`
