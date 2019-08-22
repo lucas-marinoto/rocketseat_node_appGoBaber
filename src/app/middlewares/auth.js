@@ -15,6 +15,7 @@ export default async (req, res, next) => {
   try {
     const decoded = await promisify(jwt.verify)(token, authConfig.secret);
 
+    // pega o id do usuario e salva na requisicao. Este pode ser usado nas outras rotas.
     req.userId = decoded.id;
 
     return next();

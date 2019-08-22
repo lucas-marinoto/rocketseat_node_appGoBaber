@@ -1,23 +1,32 @@
 import jwt from 'jsonwebtoken';
+import * as Yup from 'yup';
 
 import User from '../models/User';
 import authConfig from '../../config/auth';
 
 class SessionController {
   async store(req, res) {
+    const schema = Yup.object().shape({
+      email: Yup.string()
+        .email()
+        .required(),
+      password: Yup.string().required(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Validation fails' });
+    }
+
     const { email, password } = req.body;
 
     const user = await User.findOne({ where: { email } });
 
     if (!user) {
-      // erro 401 acesso não autorizado
-      res.status(401).json({ error: 'User not found.' });
+      return res.status(401).json({ error: 'User not found' });
     }
-    // validação se senha digitada bateu com a do banco. Foi criado um método na classe do User.js
-    // para fazer esta validação com o compare, o qual retorna true se bateu. No caso abaixo é negado
-    // para saber se não bateu mostrar o erro
+
     if (!(await user.checkPassword(password))) {
-      res.status(401).json({ error: 'Password does not match.' });
+      return res.status(401).json({ error: 'Password does not match' });
     }
 
     const { id, name } = user;
@@ -28,7 +37,7 @@ class SessionController {
         name,
         email,
       },
-      token: jwt.sign({ id, name, email }, authConfig.secret, {
+      token: jwt.sign({ id }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,
       }),
     });
