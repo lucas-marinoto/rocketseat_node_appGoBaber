@@ -153,3 +153,10 @@ Utilizado para gerar o tken JWT nas sessões
 Utilizado para fazer validações de campo. Ex.: Se um email esta preenchido, se a senha tem 6 digitos, etc...
 
 - `yarn add yup`
+
+------------------------------
+
+**Extensão Multer**
+Utilizado para lidar com MultiPart Form Data, que é o formato que o Json aceita para envio da foto fisica
+
+- `yarn add multer`
