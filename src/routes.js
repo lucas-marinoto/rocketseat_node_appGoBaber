@@ -10,19 +10,19 @@ import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
 const upload = multer(multerConfig);
-
+/*
 routes.get('/', (req, res) => {
   return res.send('Rota principal');
 });
-
-// routes.post('/users', UserController.store);
-// routes.post('/sessions', SessionController.store);
+*/
+routes.post('/users', UserController.store);
+routes.post('/sessions', SessionController.store);
 
 // validação se tem o token ou seja, se esta autenticado. Valido para todas as rotas abaixo, pois é global
-// routes.use(authMiddlewares);
+routes.use(authMiddlewares);
 
-// routes.put('/users', UserController.update);
+routes.put('/users', UserController.update);
 
-// routes.post('/files', upload.single('file'), FileController.store);
+routes.post('/files', upload.single('file'), FileController.store);
 
 export default routes;
