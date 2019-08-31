@@ -1,6 +1,5 @@
 module.exports = {
-  /*
-  dialect: 'postgres',
+dialect: 'postgres',
   host: 'localhost',
   username: 'postgres',
   password: 'admin',
@@ -10,7 +9,8 @@ module.exports = {
     underscored: true,
     underscoredAll: true,
   },
-  */
+
+  /*
   dialect: 'postgres',
   host: 'ec2-54-235-92-244.compute-1.amazonaws.com',
   username: 'yfxguygfylbzbu',
@@ -24,4 +24,5 @@ module.exports = {
   dialectOptions: {
     ssl: true,
   },
+  */
 };
