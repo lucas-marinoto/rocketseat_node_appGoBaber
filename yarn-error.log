@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add date-fns@next
 
 PATH: 
   C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files\TortoiseSVN\bin;C:\Python3.7;C:\Python3.7\Lib;C:\Program Files\PuTTY\;C:\Program Files (x86)\Java\jre1.8.0_181\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\postgresql\10\bin;C:\Program Files (x86)\VisualSVN Server\bin;C:\Python3.7\Scripts\;C:\Python3.7\;C:\Users\lucas.m.marinoto\AppData\Local\Microsoft\WindowsApps;C:\Users\lucas.m.marinoto\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lucas.m.marinoto\AppData\Local\Programs\Git\cmd;C:\Users\lucas.m.marinoto\AppData\Local\Microsoft\WindowsApps;C:\Users\lucas.m.marinoto\AppData\Roaming\npm;C:\Users\lucas.m.marinoto\AppData\Local\Yarn\bin;C:\Users\lucas.m.marinoto\AppData\Local\now-cli
@@ -14,12 +14,16 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Rocketseat\rocketseat_node_appGoBaber\package.json: Unexpected token / in JSON at position 264
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:304:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:315:13
+  Error: https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-beta.5.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:130217:19)
+      at Object.onceWrapper (events.js:288:20)
+      at ClientRequest.emit (events.js:200:13)
+      at TLSSocket.emitRequestTimeout (_http_client.js:683:40)
+      at Object.onceWrapper (events.js:288:20)
+      at TLSSocket.emit (events.js:200:13)
+      at TLSSocket.Socket._onTimeout (net.js:432:8)
+      at listOnTimeout (internal/timers.js:531:17)
+      at processTimers (internal/timers.js:475:7)
 
 npm manifest: 
   {
@@ -30,8 +34,13 @@ npm manifest:
     "author": "lucas-marinoto <lucas_marinoto@msn.com>",
     "license": "MIT",
     "scripts": {
-      //"dev": "nodemon src/server.js",
+      "dev": "nodemon src/server.js",
       "start": "nodemon src/server.js"
+    },
+    "engines": {
+      "node": "12.3.1",
+      "npm": "6.9.0",
+      "yarn": "1.16.0"
     },
     "dependencies": {
       "bcryptjs": "^2.4.3",

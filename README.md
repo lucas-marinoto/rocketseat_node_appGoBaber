@@ -160,3 +160,10 @@ Utilizado para fazer validações de campo. Ex.: Se um email esta preenchido, se
 Utilizado para lidar com MultiPart Form Data, que é o formato que o Json aceita para envio da foto fisica
 
 - `yarn add multer`
+
+------------------------------
+
+**Extensão Date FNS**
+Utilizado para lidar com datas dentro do node
+
+- `yarn add date-fns@next`
