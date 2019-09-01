@@ -15,10 +15,7 @@ class ProviderController {
       ],
     });
 
-    if (providers) {
-      return res.json(providers);
-    }
-    return res.json('Not Found');
+    return res.json(providers);
   }
 }
 
