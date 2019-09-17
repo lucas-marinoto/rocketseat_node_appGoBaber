@@ -167,3 +167,10 @@ Utilizado para lidar com MultiPart Form Data, que é o formato que o Json aceita
 Utilizado para lidar com datas dentro do node
 
 - `yarn add date-fns@next`
+
+------------------------------
+
+**Extensão Mongoose**
+ORM utilizado para o MongoDB
+
+- `yarn add mongoose`
