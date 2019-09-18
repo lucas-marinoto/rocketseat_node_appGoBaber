@@ -18,6 +18,10 @@ routes.get('/', (req, res) => {
   return res.send('Rota principal');
 });
 */
+routes.get('/', (req, res) => {
+  res.send('App works!!');
+});
+
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
