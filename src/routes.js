@@ -13,13 +13,9 @@ import authMiddlewares from './app/middlewares/auth';
 
 const routes = new Router();
 const upload = multer(multerConfig);
-/*
+
 routes.get('/', (req, res) => {
-  return res.send('Rota principal');
-});
-*/
-routes.get('/', (req, res) => {
-  res.send('App works!!');
+  return res.send('Bem vindo a API GoBarber');
 });
 
 routes.post('/users', UserController.store);
