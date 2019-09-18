@@ -174,3 +174,26 @@ Utilizado para lidar com datas dentro do node
 ORM utilizado para o MongoDB
 
 - `yarn add mongoose`
+
+------------------------------
+
+**Extensão Nodemailer**
+Utilizado para envio de email no node. Usei o https://mailtrap.io para teste de email SMTP
+
+- `yarn add nodemailer`
+
+------------------------------
+
+**Extensão express-handlebars**
+Template engine utilizado para criar o template de HTML do email
+
+- `yarn add express-handlebars`
+
+------------------------------
+
+**Extensão nodemailer-express-handlebar**
+Integração do handlebars com o nodemailer para criar o email HTML
+
+- `yarn add nodemailer-express-handlebars`
+
+
